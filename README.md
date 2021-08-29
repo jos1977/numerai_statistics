@@ -51,7 +51,7 @@ A lot of the pages also contains slicers based on model selection, round numbers
 ## Disclaimer
 No guarantees are given that the data and visuals that are being produced by the projects found in this repository are correct!! It could very well be that the source data contains errors or bugs are still present in this solution. As such, if this solution is used for financial incentives (staking / strategy /etc ) you are using it at your own risk :-)
 
-
+## Issues, Contact
 If you encounter any problem or have suggestions, feel free to open an issue or contact me at Numerai (forum / rocketchat / dm). My handle at RocketChat is 'QE', my handle in the forum is 'qeintelligence'.
 
 ## Technologies used
