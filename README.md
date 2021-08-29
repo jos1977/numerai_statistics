@@ -60,14 +60,14 @@ The report makes use of PowerBI Desktop which can be found [here](https://powerb
 The statistics retrieval is based on C# project and makes use of the GraphiQl endpoints provided by Numerai.
 
 ## Screenshots
-If you want to have a quick peek on what kind of pages there are available check out this [page](https://github.com/jos1977/numerai_statistics/tree/main/documentation/screenshots.md): 
+If you want to have a quick peek on what kind of pages there are available check out this [page](https://github.com/jos1977/numerai_statistics/tree/main/documentation/screenshots.md).
+
 ## Hardware Requirements and Installation
 The PowerBI Desktop requirements are : Windows or Mac hardware, 8Gb should be sufficient for this report
 PowerBI Desktop download link is [here](https://aka.ms/pbiSingleInstaller)
 Just download the installer and run this, you don't need any Microsoft account for this solution.
 
 The C# project requires [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio Code](https://code.visualstudio.com/download).
-
 
 ## Export files
 There is the possibility not to use the Power BI report but only look at the pdf export that are generated on a weekly basis and stored in the repository [over here](https://github.com/jos1977/numerai_statistics/blob/main/classic/export/NumeraiClassicStatistics.pdf). This will give you the main statistics for all the models and also by default several 'team' models are selected in the report. Using the PowerBI Desktop yourself will give you the additional features ofcourse like selecting your own models yourself, so its up to you how you want to use it.
