@@ -10,7 +10,7 @@ This repository contains the following projects:
 
 The solution is mainly meant to be used on a long-term basis (weekly, monthly) and should not be seen as a dashboard solution with live data. As such, exports will be automatically refreshed on a weekly basis, and can be used for the PowerBI report or for other purposes. The data used in the report is based on the numerai api (GraphiQl) for all the models in the classic tournament.
 
-### Report pages
+## Report pages
 The report for classic contains the following pages and visuals:
 
 - General
@@ -52,14 +52,14 @@ A lot of the pages also contains slicers based on model selection, round numbers
 No guarantees are given that the data and visuals that are being produced by the projects found in this repository are correct!! It could very well be that the source data contains errors or bugs are still present in this solution. As such, if this solution is used for financial incentives (staking / strategy /etc ) you are using it at your own risk :-)
 
 ## Issues, Contact
-If you encounter any problem or have suggestions, feel free to open an issue or contact me at Numerai (forum / rocketchat / dm). My handle at RocketChat is 'QE', my handle in the forum is 'qeintelligence'.
+If you encounter any problem or have suggestions, feel free to open an issue or contact me at Numerai (orum / rocketchat / dm). My handle at RocketChat is 'QE', my handle in the forum is 'qeintelligence'.
 
 ## Technologies used
 The report makes use of PowerBI Desktop which can be found [here](https://powerbi.microsoft.com/en-us/downloads/). The tool is a free to use app for both personal use or for commercial companies. PowerBI Service (and premium) require a license and Office365 environment, and provide the of sharing (B2B, B2C) but are not required for this solution.
 
 The statistics retrieval is based on C# project and makes use of the GraphiQl endpoints provided by Numerai.
 
-# Hardware Requirements and Installation
+## Hardware Requirements and Installation
 The PowerBI Desktop requirements are : Windows or Mac hardware, 8Gb should be sufficient for this report
 PowerBI Desktop download link is [here](https://aka.ms/pbiSingleInstaller)
 Just download the installer and run this, you don't need any Microsoft account for this solution.
@@ -67,7 +67,7 @@ Just download the installer and run this, you don't need any Microsoft account f
 The C# project requires [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio Code](https://code.visualstudio.com/download).
 
 
-# Export files
+## Export files
 There is the possibility not to use the Power BI report but only look at the pdf export that are generated on a weekly basis and stored in the repository [over here](https://github.com/jos1977/numerai_statistics/blob/main/classic/export/NumeraiClassicStatistics.pdf). This will give you the main statistics for all the models and also by default several 'team' models are selected in the report. Using the PowerBI Desktop yourself will give you the additional features ofcourse like selecting your own models yourself, so its up to you how you want to use it.
 
 The parquet export files are also updated on a weekly basis and can be found [here](https://github.com/jos1977/numerai_statistics/tree/main/classic/parquet). These contain all data from the following endpoints:
@@ -77,23 +77,23 @@ The parquet export files are also updated on a weekly basis and can be found [he
  - V2RoundDetails
 
 In addition also Numerai statistics are retrieved from Coinbase.
-# Power BI Report usage
-## First time
+## Power BI Report usage
+### First time
 After PowerBI Desktop is installed you can open the report pbit template from the repository, this is the [file](https://github.com/jos1977/numerai_statistics/blob/main/classic/pbi/NumeraiClassicStatistics.pbit).
 
 The report template doesn't contain any data yet and will start refreshing immediately (using parquet files from this repository). This will take several minutes.
 ![alt text](../numerai_statistics/documentation/pbi_template.png "Initial Refresh")
 
 
-## Model selection
+### Model selection
 After this you can select your own models that you want to analyse in the page 'Models'. Follow the instructions there and after that save the report locally (as a .pbix file). This is the report you can work with from now and refresh weekly. If a new version of the template is released just redo the earlier steps.
 ![alt text](../numerai_statistics/documentation/pbi_modelselect.png "Model Select")
 
-## Refresh
+### Refresh
 Data refresh on the repository is planned on a weekly basis, on Sunday 16.00 UTC time. This could be delayed, since its depending on other pipelines to finish, but data should be there on Monday. You can refresh your report simply by clicking on the 'Refresh' button in the menu.
 
 
-# Future Work
+## Future Work
 - Fully automate statistics retrieval (including parquet)
 - Release the C# project, statistics retrieval
 - Visual cleanup of PowerBI report
