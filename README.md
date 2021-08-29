@@ -59,6 +59,8 @@ The report makes use of PowerBI Desktop which can be found [here](https://powerb
 
 The statistics retrieval is based on C# project and makes use of the GraphiQl endpoints provided by Numerai.
 
+## Screenshots
+If you want to have a quick peek on what kind of pages there are available check out this [page](https://github.com/jos1977/numerai_statistics/tree/main/documentation/screenshots.md): 
 ## Hardware Requirements and Installation
 The PowerBI Desktop requirements are : Windows or Mac hardware, 8Gb should be sufficient for this report
 PowerBI Desktop download link is [here](https://aka.ms/pbiSingleInstaller)
