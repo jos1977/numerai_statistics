@@ -11,3 +11,5 @@ classic/pbi/NumeraiClassicStatistics.pbix
 .vs/slnx.sqlite
 .vs/slnx.sqlite
 classic/pbi/NumeraiClassicStatistics_parquet.pbix
+classic/pbi/NumeraiClassicStatistics_personal.pbix
+classic/pbi/archive/*.pbix
