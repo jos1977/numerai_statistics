@@ -82,12 +82,12 @@ In addition also Numerai statistics are retrieved from Coinbase.
 After PowerBI Desktop is installed you can open the report pbit template from the repository, this is the [file](https://github.com/jos1977/numerai_statistics/blob/main/classic/pbi/NumeraiClassicStatistics.pbit).
 
 The report template doesn't contain any data yet and will start refreshing immediately (using parquet files from this repository). This will take several minutes.
-![alt text](../numerai_statistics/documentation/pbi_template.png "Initial Refresh")
+![Inital Refresh](documentation/pbi_template.png "Initial Refresh")
 
 
 ### Model selection
 After this you can select your own models that you want to analyse in the page 'Models'. Follow the instructions there and after that save the report locally (as a .pbix file). This is the report you can work with from now and refresh weekly. If a new version of the template is released just redo the earlier steps.
-![alt text](../numerai_statistics/documentation/pbi_modelselect.png "Model Select")
+![Model Select](documentation/pbi_modelselect.png "Model Select")
 
 ### Refresh
 Data refresh on the repository is planned on a weekly basis, on Sunday 16.00 UTC time. This could be delayed, since its depending on other pipelines to finish, but data should be there on Monday. You can refresh your report simply by clicking on the 'Refresh' button in the menu.
