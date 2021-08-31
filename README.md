@@ -59,6 +59,9 @@ The report makes use of PowerBI Desktop which can be found [here](https://powerb
 
 The statistics retrieval is based on C# project and makes use of the GraphiQl endpoints provided by Numerai.
 
+## Dashboard in Numerbay
+The report is now also available in PowerBI Service! (testing phase). The report link is availabe at Numerbay and also is integrated into the main page of the website as iFrame solution. Go to [Numerbay](https://numerbay.ai/) and check out the excellent work they put into the website.
+
 ## Screenshots
 If you want to have a quick peek on what kind of pages there are available check out this [page](https://github.com/jos1977/numerai_statistics/tree/main/documentation/screenshots.md).
 
