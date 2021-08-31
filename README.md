@@ -98,7 +98,11 @@ Data refresh on the repository is planned on a weekly basis, on Sunday 16.00 UTC
 ## Future Work
 - Fully automate statistics retrieval (including parquet)
 - Release the C# project, statistics retrieval
+- PowerBI Report: add dates to visuals where roundnumber is used on X-axis
+- PowerBI Report: investigate option to compare selected/all models against example_model (corr/mmc/fnc diff, performance diff)
+- PowerBI Report: option to filter ranking increase statistics based on 20 rounds submissions yes/no
 - Visual cleanup of PowerBI report
 - Include additional Top 10 rankings : 20wk / 5wk correlation/mmc rankings
 - Include Model Scenarios page: MMC selection scenarios, Model selection scenarios
-- TBD
+## Long Term
+- Signals Report and Statistics retrieval?
