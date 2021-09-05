@@ -14,3 +14,9 @@ classic/pbi/NumeraiClassicStatistics_parquet.pbix
 classic/pbi/NumeraiClassicStatistics_personal.pbix
 classic/pbi/archive/*.pbix
 classic/pbi/archive/NumeraiClassicStatistics_v0_2_0.pbit
+classic/src/.vs/ClassicStatistics/DesignTimeBuild/.dtbcache.v2
+classic/src/RetrieveClassicStatistics/.vs/RetrieveClassicStatistics/v16/.suo
+classic/src/.vs/ClassicStatistics/v16/.suo
+classic/src/RetrieveClassicStatistics/.vs/RetrieveClassicStatistics/DesignTimeBuild/.dtbcache.v2
+classic/src/RetrieveClassicStatistics/Properties/PublishProfiles/FolderProfile.pubxml.user
+classic/src/RetrieveClassicStatistics/RetrieveClassicStatistics.csproj.user
