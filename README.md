@@ -73,15 +73,31 @@ Just download the installer and run this, you don't need any Microsoft account f
 The C# project requires [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio Code](https://code.visualstudio.com/download).
 
 ## Export files
-There is the possibility not to use the Power BI report but only look at the pdf export that are generated on a weekly basis and stored in the repository [over here](https://github.com/jos1977/numerai_statistics/blob/main/classic/export/NumeraiClassicStatistics.pdf). This will give you the main statistics for all the models and also by default several 'team' models are selected in the report. Using the PowerBI Desktop yourself will give you the additional features ofcourse like selecting your own models yourself, so its up to you how you want to use it.
-
-The parquet export files are also updated on a weekly basis and can be found [here](https://github.com/jos1977/numerai_statistics/tree/main/classic/parquet). These contain all data from the following endpoints:
+The parquet export files are updated on a weekly basis and can be found [here](https://github.com/jos1977/numerai_statistics/tree/main/classic/parquet). These contain all data from the following numerai endpoints:
  - V3Userprofile
  - roundSubmissionPerformances
  - V2Leaderboard
  - V2RoundDetails
 
 In addition also Numerai statistics are retrieved from Coinbase.
+
+## Retrieve Classic Statistics
+The retrieval of the statistics and uploading of parquet files to git is done in 4 steps which are explained next.
+
+### Retrieve statistics from Numerai
+The initial step is retrieving the data from numerai endpoint (https://api-tournament.numer.ai/), for this the C# project RetrieveClassicStatistics is used. This is .NET5 based, and should run fine on Windows/Linux based hardware which has the .net5 runtime installed. In my case I am using Ubuntu 18.04/20.04. The endresult of running the console application are CSV export files.
+
+### Retrieve Coinbase Numeraire statistics
+In addition also some coinbase statistics are retrieved, for this Python is used, an example can be found [here](https://github.com/jos1977/numerai_statistics/blob/main/classic/src/Python/NumerairePriceData.ipynb).
+
+### Convert CSV to Parquet
+Next step is to convert the CSV to Parquet-files for size reduction purposes. 
+I looked at various solutions but could not find a decent working package for C#, instead the Python Pandas works just out of the box and superfast!
+You can see the example [here](https://github.com/jos1977/numerai_statistics/blob/main/classic/src/Python/ConvertCSVToParquet.ipynb).
+
+### Commit/Push Parquet to Git
+The final step is to make sure the parquet files are in the git repository. There is the option to use Git Data Api, however didnt take the time to get this working (in C#). Instead I just used the easy approach of using [GitPython](https://github.com/gitpython-developers/GitPython) which just works without any problem at all. See [here](https://github.com/jos1977/numerai_statistics/blob/main/classic/src/Python/Sync_Git.ipynb) for the example python script on how to handle this.
+
 ## Power BI Report usage
 ### First time
 After PowerBI Desktop is installed you can open the report pbit template from the repository, this is the [file](https://github.com/jos1977/numerai_statistics/blob/main/classic/pbi/NumeraiClassicStatistics.pbit).
