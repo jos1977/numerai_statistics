@@ -15,7 +15,7 @@ namespace NumeraiApi
             public object oldStakeValue { get; set; }
             public string payoutPending { get; set; }
             public string payoutSettled { get; set; }
-            public int prevRank { get; set; }
+            public int? prevRank { get; set; }
             public int? prevStakedRank { get; set; }
             public int rank { get; set; }
             public string reputation { get; set; }

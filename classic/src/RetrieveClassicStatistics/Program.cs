@@ -64,14 +64,13 @@ namespace RetrieveClassicStatistics
             int i = 1;
             foreach (var entry in v2LeaderboardResponse.Data.v2Leaderboard)
             {
-                int retry = 5;
+                int retry = 15;
                 bool succeeded = false;
                 while (retry > 0 && !succeeded)
                 {
                     retry -= 1;
                     try
                     {
-                        Thread.Sleep(500);
                         var user = entry.username;
 
                         Console.WriteLine("processing number {0} : user {1}", i, entry.username);

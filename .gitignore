@@ -20,3 +20,7 @@ classic/src/.vs/ClassicStatistics/v16/.suo
 classic/src/RetrieveClassicStatistics/.vs/RetrieveClassicStatistics/DesignTimeBuild/.dtbcache.v2
 classic/src/RetrieveClassicStatistics/Properties/PublishProfiles/FolderProfile.pubxml.user
 classic/src/RetrieveClassicStatistics/RetrieveClassicStatistics.csproj.user
+/classic/src/NumeraiApi/bin
+/classic/src/NumeraiApi/obj
+/classic/src/RetrieveClassicStatistics/bin
+/classic/src/RetrieveClassicStatistics/obj
