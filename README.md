@@ -115,10 +115,12 @@ After this you can select your own models that you want to analyse in the page '
 ### Refresh
 Data refresh on the repository is planned on a weekly basis, on Sunday 16.00 UTC time. This could be delayed, since its depending on other pipelines to finish, but data should be there on Monday. You can refresh your report simply by clicking on the 'Refresh' button in the menu.
 
-
-## Future Work
+## Finished
+- Initial setup Power BI Report + retrieval application
+- Initial setup Github Repo
 - Fully automate statistics retrieval (including parquet)
 - Release the C# project, statistics retrieval
+## Future Work
 - PowerBI Report: add dates to visuals where roundnumber is used on X-axis
 - PowerBI Report: investigate option to compare selected/all models against example_model (corr/mmc/fnc diff, performance diff)
 - PowerBI Report: option to filter ranking increase statistics based on 20 rounds submissions yes/no
