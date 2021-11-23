@@ -113,17 +113,21 @@ After this you can select your own models that you want to analyse in the page '
 ![Model Select](documentation/pbi_modelselect.png "Model Select")
 
 ### Refresh
-Data refresh on the repository is planned on a weekly basis, on Sunday 16.00 UTC time. This could be delayed, since its depending on other pipelines to finish, but data should be there on Monday. You can refresh your report simply by clicking on the 'Refresh' button in the menu.
+Data refresh on the repository is planned on a daily basis, at 02.00 UTC time. Power BI Report in Power BI Service is refreshed at 06.00 UTC (after data retrieval pipelines should be finished). You can refresh your own report simply by clicking on the 'Refresh' button in the menu.
 
-
-## Future Work
+## Finished
+- Initial setup Power BI Report + retrieval application
+- Initial setup Github Repo
 - Fully automate statistics retrieval (including parquet)
 - Release the C# project, statistics retrieval
 - PowerBI Report: add dates to visuals where roundnumber is used on X-axis
+- Include Prediction Scenarios page: MMC selection scenarios
+## Future Work
+- Automate data retrieval pipeline start after numerai scores reported ready.
+- Automate PowerBI Service report refresh after data pipeline retrieval finished
 - PowerBI Report: investigate option to compare selected/all models against example_model (corr/mmc/fnc diff, performance diff)
 - PowerBI Report: option to filter ranking increase statistics based on 20 rounds submissions yes/no
 - Visual cleanup of PowerBI report
 - Include additional Top 10 rankings : 20wk / 5wk correlation/mmc rankings
-- Include Model Scenarios page: MMC selection scenarios, Model selection scenarios
 ## Long Term
 - Signals Report and Statistics retrieval?
