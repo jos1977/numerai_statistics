@@ -78,53 +78,57 @@ namespace RetrieveClassicStatistics
                         var V3userprofileRequest = new GraphQLRequest { Query = V3userprofileRequestQuery, Variables = new { modelName = user } };
 
                         var V3userprofileResponse = graphQLClient.SendQueryAsync<V3UserProfileRoot>(V3userprofileRequest).Result;
-                        V3BasicUserProfile userProfile = new V3BasicUserProfile()
+                        if( V3userprofileResponse.Data != null && V3userprofileResponse.Data.v3UserProfile != null)
                         {
-                            bio = V3userprofileResponse.Data.v3UserProfile.bio == null ? string.Empty : V3userprofileResponse.Data.v3UserProfile.bio.ToString().Replace(";", ""),
-                            computeEnabled = V3userprofileResponse.Data.v3UserProfile.computeEnabled,
-                            control = V3userprofileResponse.Data.v3UserProfile.control,
-                            id = V3userprofileResponse.Data.v3UserProfile.id,
-                            isActive = V3userprofileResponse.Data.v3UserProfile.isActive,
-                            corr = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.corr,
-                            corr20d = null,
-                            corr20dRank = null,
-                            fnc = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.fnc,
-                            fncRank = null,
-                            mmc = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.mmc,
-                            mmcRank = null,
-                            prevCorr20dRank = null,
-                            prevFncRank = null,
-                            prevMmcRank = null,
-                            prevRank = null,
-                            rank = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.rank,
-                            oneDay = V3userprofileResponse.Data.v3UserProfile.latestReturns.oneDay,
-                            oneYear = V3userprofileResponse.Data.v3UserProfile.latestReturns.oneYear,
-                            threeMonths = V3userprofileResponse.Data.v3UserProfile.latestReturns.threeMonths,
-                            linkText = V3userprofileResponse.Data.v3UserProfile.linkText,
-                            linkUrl = V3userprofileResponse.Data.v3UserProfile.linkUrl,
-                            corrMultiplier = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier == null ? string.Empty : V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier,
-                            mmcMultiplier = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier == null ? string.Empty : V3userprofileResponse.Data.v3UserProfile.stakeInfo.mmcMultiplier,
-                            takeProfit = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier == null ? false : V3userprofileResponse.Data.v3UserProfile.stakeInfo.takeProfit,
-                            startDate = V3userprofileResponse.Data.v3UserProfile.startDate,
-                            team = V3userprofileResponse.Data.v3UserProfile.team,
-                            username = user
-                        };
+                            V3BasicUserProfile userProfile = new V3BasicUserProfile()
+                            {
+                                bio = V3userprofileResponse.Data.v3UserProfile.bio == null ? string.Empty : V3userprofileResponse.Data.v3UserProfile.bio.ToString().Replace(";", ""),
+                                computeEnabled = V3userprofileResponse.Data.v3UserProfile.computeEnabled,
+                                control = V3userprofileResponse.Data.v3UserProfile.control,
+                                id = V3userprofileResponse.Data.v3UserProfile.id,
+                                isActive = V3userprofileResponse.Data.v3UserProfile.isActive,
+                                corr = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.corr,
+                                corr20d = null,
+                                corr20dRank = null,
+                                fnc = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.fnc,
+                                fncRank = null,
+                                mmc = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.mmc,
+                                mmcRank = null,
+                                prevCorr20dRank = null,
+                                prevFncRank = null,
+                                prevMmcRank = null,
+                                prevRank = null,
+                                rank = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.rank,
+                                oneDay = V3userprofileResponse.Data.v3UserProfile.latestReturns.oneDay,
+                                oneYear = V3userprofileResponse.Data.v3UserProfile.latestReturns.oneYear,
+                                threeMonths = V3userprofileResponse.Data.v3UserProfile.latestReturns.threeMonths,
+                                linkText = V3userprofileResponse.Data.v3UserProfile.linkText,
+                                linkUrl = V3userprofileResponse.Data.v3UserProfile.linkUrl,
+                                corrMultiplier = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier == null ? string.Empty : V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier,
+                                mmcMultiplier = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier == null ? string.Empty : V3userprofileResponse.Data.v3UserProfile.stakeInfo.mmcMultiplier,
+                                takeProfit = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier == null ? false : V3userprofileResponse.Data.v3UserProfile.stakeInfo.takeProfit,
+                                startDate = V3userprofileResponse.Data.v3UserProfile.startDate,
+                                team = V3userprofileResponse.Data.v3UserProfile.team,
+                                username = user
+                            };
 
-                        //User Profiles
-                        userProfiles.Add(userProfile);
+                            //User Profiles
+                            userProfiles.Add(userProfile);
 
-                        //Daily Model Performances
-                        var dailyModelPerformances = V3userprofileResponse.Data.v3UserProfile.dailyModelPerformances;// .dailySubmissionPerformances;
-                        foreach (var perf in dailyModelPerformances) { perf.username = userProfile.username; }
+                            //Daily Model Performances
+                            var dailyModelPerformances = V3userprofileResponse.Data.v3UserProfile.dailyModelPerformances;// .dailySubmissionPerformances;
+                            foreach (var perf in dailyModelPerformances) { perf.username = userProfile.username; }
 
-                        allDailyModelPerformances.AddRange(dailyModelPerformances);
+                            allDailyModelPerformances.AddRange(dailyModelPerformances);
 
-                        //Round Model Performances
-                        var roundModelPerformances = V3userprofileResponse.Data.v3UserProfile.roundModelPerformances;
+                            //Round Model Performances
+                            var roundModelPerformances = V3userprofileResponse.Data.v3UserProfile.roundModelPerformances;
 
-                        foreach (var perf in roundModelPerformances) { perf.username = userProfile.username; }
-                        allRoundModelPerformances.AddRange(roundModelPerformances);
-                        succeeded = true;
+                            foreach (var perf in roundModelPerformances) { perf.username = userProfile.username; }
+                            allRoundModelPerformances.AddRange(roundModelPerformances);
+                            succeeded = true;
+                        }
+
                     }
                     catch (Exception e)
                     {
