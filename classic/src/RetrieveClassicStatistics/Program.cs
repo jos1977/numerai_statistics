@@ -90,13 +90,13 @@ namespace RetrieveClassicStatistics
                                 corr = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.corr,
                                 corr20d = null,
                                 corr20dRank = null,
-                                fnc = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.fnc,
-                                fncRank = null,
-                                mmc = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.mmc,
-                                mmcRank = null,
+                                fncV3 = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.fncV3,
+                                fncV3Rank = null,
+                                tc = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.tc,
+                                tcRank = null,
                                 prevCorr20dRank = null,
-                                prevFncRank = null,
-                                prevMmcRank = null,
+                                prevFncV3Rank = null,
+                                prevTcRank = null,
                                 prevRank = null,
                                 rank = V3userprofileResponse.Data.v3UserProfile.latestRanks == null ? 0 : V3userprofileResponse.Data.v3UserProfile.latestRanks.rank,
                                 oneDay = V3userprofileResponse.Data.v3UserProfile.latestReturns.oneDay,
@@ -105,7 +105,7 @@ namespace RetrieveClassicStatistics
                                 linkText = V3userprofileResponse.Data.v3UserProfile.linkText,
                                 linkUrl = V3userprofileResponse.Data.v3UserProfile.linkUrl,
                                 corrMultiplier = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier == null ? string.Empty : V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier,
-                                mmcMultiplier = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier == null ? string.Empty : V3userprofileResponse.Data.v3UserProfile.stakeInfo.mmcMultiplier,
+                                tcMultiplier = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.tcMultiplier == null ? string.Empty : V3userprofileResponse.Data.v3UserProfile.stakeInfo.tcMultiplier,
                                 takeProfit = V3userprofileResponse.Data.v3UserProfile.stakeInfo == null || V3userprofileResponse.Data.v3UserProfile.stakeInfo.corrMultiplier == null ? false : V3userprofileResponse.Data.v3UserProfile.stakeInfo.takeProfit,
                                 startDate = V3userprofileResponse.Data.v3UserProfile.startDate,
                                 team = V3userprofileResponse.Data.v3UserProfile.team,
@@ -127,6 +127,10 @@ namespace RetrieveClassicStatistics
                             foreach (var perf in roundModelPerformances) { perf.username = userProfile.username; }
                             allRoundModelPerformances.AddRange(roundModelPerformances);
                             succeeded = true;
+                        }
+                        else
+                        {
+                            succeeded = true; //just skip this one, this is a problem at the nmr api side
                         }
 
                     }

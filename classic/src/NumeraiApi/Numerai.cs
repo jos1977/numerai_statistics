@@ -35,8 +35,8 @@ namespace NumeraiApi
             public double? correlation { get; set; }
             public double? correlationWithMetamodel { get; set; }
             public DateTime? date { get; set; }
-            public double? fnc { get; set; }
-            public double? mmc { get; set; }
+            public double? fncV3 { get; set; }
+            public double? tc { get; set; }
             public int roundNumber { get; set; }
             public string username { get; set; }
         }
@@ -57,7 +57,7 @@ namespace NumeraiApi
             public string username { get; set; }
             public string apy { get; set; }
             public string corrRep { get; set; }
-            public string fncRep { get; set; }
+            public string fncV3Rep { get; set; }
             public string return13Weeks { get; set; }
             public string return52Weeks { get; set; }
             public string totalRep { get; set; }
@@ -119,13 +119,13 @@ namespace NumeraiApi
             public int corr { get; set; }
             public int? corr20d { get; set; }
             public int? corr20dRank { get; set; }
-            public int fnc { get; set; }
-            public int? fncRank { get; set; }
-            public int mmc { get; set; }
-            public int? mmcRank { get; set; }
+            public int fncV3 { get; set; }
+            public int? fncV3Rank { get; set; }
+            public int tc { get; set; }
+            public int? tcRank { get; set; }
             public int? prevCorr20dRank { get; set; }
-            public int? prevFncRank { get; set; }
-            public int? prevMmcRank { get; set; }
+            public int? prevFncV3Rank { get; set; }
+            public int? prevTcRank { get; set; }
             public int? prevRank { get; set; }
             public int? rank { get; set; }
             public string oneDay { get; set; }
@@ -137,7 +137,7 @@ namespace NumeraiApi
             public string gold { get; set; }
             public string silver { get; set; }
             public string? corrMultiplier { get; set; }
-            public string? mmcMultiplier { get; set; }
+            public string? tcMultiplier { get; set; }
             public bool? takeProfit { get; set; }
             public DateTime startDate { get; set; }
             public bool team { get; set; }
@@ -168,7 +168,7 @@ namespace NumeraiApi
         public class StakeInfo
         {
             public string corrMultiplier { get; set; }
-            public string mmcMultiplier { get; set; }
+            public string tcMultiplier { get; set; }
             public bool takeProfit { get; set; }
         }
         public class RoundModelPerformance
@@ -179,11 +179,11 @@ namespace NumeraiApi
             public float? corrMultiplier { get; set; }
             public float? corrPercentile { get; set; }
             public float? corrWMetamodel { get; set; }
-            public float? fnc { get; set; }
-            public float? fncPercentile { get; set; }
-            public float? mmc { get; set; }
-            public float? mmcMultiplier { get; set; }
-            public float? mmcPercentile { get; set; }
+            public float? fncV3 { get; set; }
+            public float? fncV3Percentile { get; set; }
+            public float? tc { get; set; }
+            public float? tcMultiplier { get; set; }
+            public float? tcPercentile { get; set; }
             public string? payout { get; set; }
             public int? roundNumber { get; set; }
             public DateTime roundOpenTime { get; set; }
@@ -199,10 +199,10 @@ namespace NumeraiApi
             public int corrRank { get; set; }
             public string corrRep { get; set; }
             public DateTime date { get; set; }
-            public int? fncRank { get; set; }
-            public string fncRep { get; set; }
-            public int? mmcRank { get; set; }
-            public string mmcRep { get; set; }
+            public int? fncV3Rank { get; set; }
+            public string fncV3Rep { get; set; }
+            public int? tcRank { get; set; }
+            public string tcRep { get; set; }
             public string? return13Weeks { get; set; }
             public string? return52Weeks { get; set; }
             public string username { get; set; }
@@ -213,13 +213,13 @@ namespace NumeraiApi
             public int corr { get; set; }
             public int? corr20d { get; set; }
             public int? corr20dRank { get; set; }
-            public int fnc { get; set; }
-            public int? fncRank { get; set; }
-            public int mmc { get; set; }
-            public int? mmcRank { get; set; }
+            public int fncV3 { get; set; }
+            public int? fncV3Rank { get; set; }
+            public int tc { get; set; }
+            public int? tcRank { get; set; }
             public int? prevCorr20dRank { get; set; }
-            public int? prevFncRank { get; set; }
-            public int? prevMmcRank { get; set; }
+            public int? prevFncV3Rank { get; set; }
+            public int? prevTcRank { get; set; }
             public int? prevRank { get; set; }
             public int? rank { get; set; }
         }
@@ -227,8 +227,8 @@ namespace NumeraiApi
         {
             public string corr { get; set; }
             public string corr20d { get; set; }
-            public string fnc { get; set; }
-            public string mmc { get; set; }
+            public string fncV3 { get; set; }
+            public string tc { get; set; }
 
         }
         public class HistoricStakeValue
@@ -341,17 +341,17 @@ namespace NumeraiApi
                             profileUrl
                             latestRanks {
                                 corr
-                                fnc
-                                mmc
+                                fncV3
+                                tc
                             }
                             latestReps {
                                 corr
-                                fnc
-                                mmc
+                                fncV3
+                                tc
                             }
                             stakeInfo {
                                 corrMultiplier
-                                mmcMultiplier
+                                tcMultiplier
                                     takeProfit
                             }
                             dailyModelPerformances {
@@ -359,10 +359,10 @@ namespace NumeraiApi
                                 corrRank
                                 corrRep
                                 date
-                                fncRank
-                                fncRep
-                                mmcRank
-                                mmcRep
+                                fncV3Rank
+                                fncV3Rep
+                                tcRank
+                                tcRep
                                 return13Weeks
                                 return52Weeks    
                             }
@@ -371,11 +371,11 @@ namespace NumeraiApi
                                 corrMultiplier
                                 corrPercentile
                                 corrWMetamodel
-                                fnc
-                                fncPercentile
-                                mmc
-                                mmcMultiplier
-                                mmcPercentile
+                                fncV3
+                                fncV3Percentile
+                                tc
+                                tcMultiplier
+                                tcPercentile
                                 payout
                                 roundNumber
                                 roundOpenTime
