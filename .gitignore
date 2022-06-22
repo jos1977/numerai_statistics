@@ -33,3 +33,5 @@ classic/src/.vs/ClassicStatistics/FileContentIndex/read.lock
 classic/src/.vs/ClassicStatistics/FileContentIndex/7a7974f9-2936-4151-a92e-221695c56ace.vsidx
 classic/src/.vs/ClassicStatistics/v17/.suo
 classic/src/RetrieveClassicStatistics/Properties/PublishProfiles/FolderProfile.pubxml
+classic/.vscode/tasks.json
+classic/.vscode/launch.json

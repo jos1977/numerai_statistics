@@ -49,7 +49,7 @@ namespace RetrieveClassicStatistics
                 Query = v2LeaderBoardRequestQuery,
                 Variables = new
                 {
-                    limit = 10000,
+                    limit = 20000,
                     offset = 0
                 }
             };
